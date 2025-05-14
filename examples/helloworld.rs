@@ -3,7 +3,8 @@ use tera::{Context, Tera};
 fn main() {
     // Create new tera instance with sample template
     let mut tera = Tera::default();
-    tera.add_raw_template("info", "My age is {{ age }}.").expect("add template 'info'");
+    tera.add_raw_template("info", "My age is {{ age }}.")
+        .expect("add template 'info'");
 
     // Create new context
     let mut context = Context::new();

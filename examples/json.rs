@@ -3,9 +3,16 @@ use tera::{Context, Tera};
 fn main() {
     // Create new tera instance with sample template
     let mut tera = Tera::default();
-    tera.add_raw_template("info", "My age is {{ p.age }} and weight is {{ p.weight }}kg.").expect("add template 'info'");
-    tera.add_raw_template("json", r#"{"age": {{ p.age }}, "weight": "{{ p.weight }}kg"}"#).expect("add template 'json'");
-
+    tera.add_raw_template(
+        "info",
+        "My age is {{ p.age }} and weight is {{ p.weight }}kg.",
+    )
+    .expect("add template 'info'");
+    tera.add_raw_template(
+        "json",
+        r#"{"age": {{ p.age }}, "weight": "{{ p.weight }}kg"}"#,
+    )
+    .expect("add template 'json'");
 
     let person = serde_json::json!({
       "p": {
